@@ -2,13 +2,20 @@ import React from "react";
 import { useState } from "react";
 import { close, logo, menu } from "../assets/assets";
 import { navLinks } from "../constants";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
-      <img src={logo} alt="logo" className="w-[124px] h-[32px]" />
+      <motion.img
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        src={logo}
+        alt="logo"
+        className="w-[124px] h-[32px]"
+      />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
@@ -18,7 +25,7 @@ const Navbar = () => {
               index === navLinks.length - 1 ? "mr-0" : "mr-10"
             } text-white`}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            <motion.a animate={{ x: 200, y: -100 }} href={`#${nav.id}`}>{nav.title}</motion.a>
           </li>
         ))}
       </ul>

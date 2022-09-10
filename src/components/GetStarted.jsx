@@ -15,10 +15,10 @@ const GetStarted = () => {
             <span className="text-gradient">Get</span>
           </p>
           <img
-              src={arrowUp}
-              alt="arrowup"
-              className="w-[23px] h-23pxx] object-contain"
-            />
+            src={arrowUp}
+            alt="arrowup"
+            className="w-[23px] h-23pxx] object-contain"
+          />
         </div>
 
         <p className="font-poppins font-medium text-[18px] leading-[23px]">
